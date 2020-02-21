@@ -16,6 +16,7 @@ export default {
   fileFilter: (req, file, cb) => {
     const ext = extname(file.originalname);
     if (ext !== '.png' && ext !== '.jpg' && ext !== '.jpeg') {
+      req.fileValidation = { error: 'Make sure the file is an image file' };
       return cb(null, false);
     }
     return cb(null, true);
