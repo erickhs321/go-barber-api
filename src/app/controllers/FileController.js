@@ -8,7 +8,7 @@ class FileController {
 
     if (req.fileValidation) {
       return res.status(400).json({
-        error: 'Make sure the file is an image file',
+        error: 'Make sure the file is an image',
       });
     }
 
