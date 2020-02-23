@@ -61,6 +61,15 @@ class AppointmentController {
     }
 
     /**
+     * validate if userId === provider_id
+     */
+    if (req.userId === provider_id) {
+      return res.status(401).json({
+        error: 'A service provider cannot schedule a service with himself',
+      });
+    }
+
+    /**
      * Check for past dates
      */
 
